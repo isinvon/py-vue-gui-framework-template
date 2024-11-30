@@ -8,21 +8,12 @@ import os
 import subprocess
 import sys
 
-# 切换到当前脚本所在目录
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-
 work_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 pyapp_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # 一次性向系统中添加多个路径(extend是append的列表形式)
 sys.path.extend([work_dir, pyapp_dir, current_dir])
-
-
-# 输出以验证路径
-print("Working directory:", os.getcwd())
-print("Python paths:", sys.path)
-
 
 from pyapp.utils.ConfigManager import ConfigManager
 
